@@ -4,16 +4,30 @@
 #include<PS2X_lib.h>
 #include<PID.h>
 
-Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
 
 #define PS2_DAT 12
 #define PS2_CMD 13
 #define PS2_SEL 15
 #define PS2_CLK 14
-#define pressures 0
-#define rumble 0
+#define pressures false
+#define rumble false
 
 PS2X ps2x;
+Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 void setup(){
   const int reconnectTime = 10;
