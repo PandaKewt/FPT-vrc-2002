@@ -2,6 +2,7 @@
 #include<Wire.h>
 #include<Adafruit_PWMServoDriver.h>
 #include<PS2X_lib.h>
+#include<PID.h>
 
 Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
 
@@ -17,10 +18,7 @@ PS2X ps2x;
 void setup(){
   const int reconnectTime = 10;
 
-  pwm.begin();
-  pwm.setOscillatorFrequency(27000000);
-  pwm.setPWMFreq(1600);
-  Wire.setClock(400000);
+
 
   Serial.begin(115200);
   Serial.available();
@@ -42,7 +40,9 @@ void loop(){
   if(ps2x.ButtonPressed(PSB_L1)) pwm.setPWM(8,0,4096);
   if(ps2x.ButtonPressed(PSB_L2)) pwm.setPWM(9,0,4096);
   if(ps2x.ButtonPressed(PSB_R1)) pwm.setPWM(10,0,4096);
-  if(ps2x.ButtonPressed(PSB_R2)) pwm.setPWM(11,0,4096);
-
+  if(ps2x.ButtonPressed(PSB_R2)) 
+  //PID
+  if(ps2x.ButtonPressed())
+  
   delay(50);
 }
